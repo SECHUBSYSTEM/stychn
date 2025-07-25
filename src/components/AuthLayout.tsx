@@ -21,7 +21,7 @@ export default function AuthLayout() {
   const router = useRouter();
 
   // Simulate login/signup
-  function handleAuth(type: "login" | "signup") {
+  function handleAuth(_type: "login" | "signup") {
     setIsLoggedIn(true);
     setIsFirstLogin(true);
     setUser({ name: "Vanessa Laird", avatarUrl: "/avatar.png" });

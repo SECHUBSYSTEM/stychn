@@ -100,8 +100,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, [isLoggedIn, isFirstLogin, user]);
 
   // Auto-logout after 1 hour
-    useEffect(() => {
-      
+  useEffect(() => {
     if (isLoggedIn) {
       const timer = setTimeout(() => {
         logout();
@@ -109,6 +108,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
       return () => clearTimeout(timer);
     }
+    return undefined;
   }, [isLoggedIn]);
 
   return (
