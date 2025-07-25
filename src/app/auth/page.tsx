@@ -1,6 +1,7 @@
 "use client";
 export const dynamic = "force-dynamic";
-import { useState } from "react";
+
+import { Suspense, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import NavigationSidebar from "@/components/NavigationSidebar";
 import LoginForm from "@/components/LoginForm";
@@ -8,7 +9,7 @@ import SignupForm from "@/components/SignupForm";
 import CongratulationsModal from "@/components/CongratulationsModal";
 import { useAuth } from "@/components/AuthContext";
 
-export default function AuthPage() {
+function AuthContent() {
   const searchParams = useSearchParams();
   const showLogin = searchParams.get("login") === "true";
   const showSignup = searchParams.get("signup") === "true";
@@ -53,5 +54,13 @@ export default function AuthPage() {
         )}
       </div>
     </div>
+  );
+}
+
+export default function AuthPage() {
+  return (
+    <Suspense fallback={null}>
+      <AuthContent />
+    </Suspense>
   );
 }
