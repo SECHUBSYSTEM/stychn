@@ -1,0 +1,32 @@
+{
+     "name": "stycha-pattern-tiler",
+     "version": "0.1.0",
+     "private": true,
+     "scripts": {
+          "dev": "next dev",
+          "build": "next build",
+          "start": "next start",
+          "lint": "next lint"
+     },
+     "dependencies": {
+          "@svgdotjs/svg.js": "^3.2.4",
+          "jspdf": "^3.0.1",
+          "jszip": "^3.10.1",
+          "next": "14.2.3",
+          "pdfjs-dist": "^5.3.31",
+          "react": "^18",
+          "react-dom": "^18"
+     },
+     "devDependencies": {
+          "@types/jszip": "^3.4.1",
+          "@types/node": "^24.1.0",
+          "@types/react": "^19.1.8",
+          "@types/react-dom": "^19.1.6",
+          "autoprefixer": "^10.4.14",
+          "eslint": "^8",
+          "eslint-config-next": "14.2.3",
+          "postcss": "^8.4.24",
+          "tailwindcss": "^3.4.1",
+          "typescript": "^5.8.3"
+     }
+}
