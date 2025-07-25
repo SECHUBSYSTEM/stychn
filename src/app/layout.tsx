@@ -1,10 +1,9 @@
-"use client";
-
 import "./globals.css";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Plus_Jakarta_Sans } from "next/font/google";
-import { AuthProvider } from "@/components/AuthContext";
+// import { AuthProvider } from "@/components/AuthContext";
+import ClientRootProvider from "@/components/ClientRootProvider";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -61,9 +60,9 @@ export default function RootLayout({
         />
       </head>
       <body className="font-plus-jakarta-sans">
-        <AuthProvider>
+        <ClientRootProvider>
           <div id="root">{children}</div>
-        </AuthProvider>
+        </ClientRootProvider>
         <script
           dangerouslySetInnerHTML={{
             __html: `
